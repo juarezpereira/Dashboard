@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardUseCompatPadding="true"
+    app:cardCornerRadius="16dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivCard"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:srcCompat="@drawable/ic_circle"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvCardTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            tools:text="Total"
+            app:layout_constraintTop_toBottomOf="@id/ivCard"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            tools:progress="50"
+            tools:secondaryProgress="70"
+            app:layout_constraintTop_toBottomOf="@id/tvCardTitle"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvCardProgress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:alpha="0.6"
+            tools:text="80.00%"
+            app:layout_constraintEnd_toEndOf="@id/progressBar"
+            app:layout_constraintTop_toTopOf="@id/progressBar"
+            app:layout_constraintBottom_toBottomOf="@id/progressBar"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvCardTotalOf"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            app:layout_constraintEnd_toStartOf="@id/tvCardRemaining"
+            app:layout_constraintStart_toStartOf="@+id/progressBar"
+            app:layout_constraintTop_toBottomOf="@id/progressBar"
+            tools:text="R$100,00 de R$1.000,00" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvCardRemaining"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            app:layout_constraintEnd_toEndOf="@+id/progressBar"
+            app:layout_constraintStart_toEndOf="@id/tvCardTotalOf"
+            app:layout_constraintTop_toBottomOf="@id/progressBar"
+            tools:text="Restam R$900,00" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivCardStar"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            app:layout_constraintTop_toTopOf="@id/tvCardBestDay"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tvCardBestDay"
+            app:layout_constraintBottom_toBottomOf="@id/tvCardBestDay" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvCardBestDay"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="16dp"
+            android:gravity="center_vertical"
+            android:maxLines="2"
+            android:lines="2"
+            tools:text="Hoje é um ótimo dia para comprar com seu NUBANK"
+            app:layout_constraintTop_toBottomOf="@id/tvCardTotalOf"
+            app:layout_constraintStart_toEndOf="@id/ivCardStar"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/groupBestCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            app:constraint_referenced_ids="tvCardBestDay,ivCardStar"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="8dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

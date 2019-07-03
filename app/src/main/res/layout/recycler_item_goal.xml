@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="?selectableItemBackground"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+
+    <View
+        android:id="@+id/bgCategoryColor"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/ic_circle"
+        android:scaleType="center"
+        app:layout_constraintEnd_toStartOf="@id/tvGoalName"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivCategoryIcon"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:tint="@color/colorAccent"
+        tools:srcCompat="@drawable/ic_circle"
+        app:layout_constraintStart_toStartOf="@id/bgCategoryColor"
+        app:layout_constraintEnd_toEndOf="@id/bgCategoryColor"
+        app:layout_constraintTop_toTopOf="@id/bgCategoryColor"
+        app:layout_constraintBottom_toBottomOf="@id/bgCategoryColor"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvCategoryInitials"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        tools:text="AB"
+        app:layout_constraintStart_toStartOf="@id/bgCategoryColor"
+        app:layout_constraintEnd_toEndOf="@id/bgCategoryColor"
+        app:layout_constraintTop_toTopOf="@id/bgCategoryColor"
+        app:layout_constraintBottom_toBottomOf="@id/bgCategoryColor"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvGoalName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/bgCategoryColor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/bgCategoryColor"
+        app:layout_constraintTop_toTopOf="@+id/bgCategoryColor"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_goneMarginEnd="24dp"
+        app:layout_goneMarginRight="24dp"
+        tools:text="Orçamento Total" />
+
+    <ProgressBar
+        android:id="@+id/progressBarGoal"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bgCategoryColor"
+        tools:progress="60"
+        tools:secondaryProgress="80" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvGoalPercent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="0.60"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/progressBarGoal"
+        app:layout_constraintEnd_toEndOf="@+id/progressBarGoal"
+        app:layout_constraintVertical_chainStyle="spread_inside"
+        tools:text="30%" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvGoalTotalOf"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progressBarGoal"
+        tools:text="R$ 100,00 de R$ 300,00" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
